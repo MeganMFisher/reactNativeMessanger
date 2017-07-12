@@ -1,0 +1,24 @@
+{
+  "name": "reactnativemessanger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeganMFisher/reactNativeMessanger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MeganMFisher/reactNativeMessanger/issues"
+  },
+  "homepage": "https://github.com/MeganMFisher/reactNativeMessanger#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "massive": "^3.0.0"
+  }
+}
