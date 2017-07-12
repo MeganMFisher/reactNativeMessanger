@@ -23,38 +23,39 @@ const controller = require('./controller.js')
 
 
 app.get('/api/messages/', controller.getAllMessages)
+app.post('/api/message/', controller.createMessage)
 
 // sockets setup 
 
-io.on('connection', socket => {
-  console.log('A user connected')
+// io.on('connection', socket => {
+//   console.log('A user connected')
 
-  socket.on('user_connected', data => {
-    socket.broadcast.emit('user_connected', { data })
-    socket.emit('user_connected', { data })
-  })
+//   socket.on('user_connected', data => {
+//     socket.broadcast.emit('user_connected', { data })
+//     socket.emit('user_connected', { data })
+//   })
 
-  socket.on('chat_message', data => {
-    controller.createMessage(app, data).then(resp => {
-      socket.broadcast.emit('chat_message', data)
-      socket.emit('chat_message', data)
-    })
-      .catch(err => {
-        socket.emit('error', err.message)
-      })
-    console.log(data)
+//   socket.on('chat_message', data => {
+//     controller.createMessage(app, data).then(resp => {
+//       socket.broadcast.emit('chat_message', data)
+//       socket.emit('chat_message', data)
+//     })
+//       .catch(err => {
+//         socket.emit('error', err.message)
+//       })
+//     console.log(data)
 
-  })
+//   })
 
-  socket.on('chat', data => {
-    socket.broadcast.emit('chat', data);
-  })
+//   socket.on('chat', data => {
+//     socket.broadcast.emit('chat', data);
+//   })
 
-  //Send a message after a timeout of 4seconds
-  setTimeout(function () {
-    socket.send('Sent a message 4seconds after connection!');
-  }, 4000);
-});
+//   //Send a message after a timeout of 4seconds
+//   setTimeout(function () {
+//     socket.send('Sent a message 4seconds after connection!');
+//   }, 4000);
+// });
 
 
 
