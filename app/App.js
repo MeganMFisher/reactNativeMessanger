@@ -1,13 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Client from './components/client';
+import Messages from './components/Messages';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.words}>Heyooo!</Text>
-
+        <Text style={styles.words}>Heo!</Text>
+        {/* <Messages/> */}
       </View>
     );
   }
